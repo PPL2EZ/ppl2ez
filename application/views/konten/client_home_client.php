@@ -97,21 +97,25 @@
           <form id="gantipassword" name="gantipassword" class="form-horizontal" role="form"  action="<?php echo base_url();?>user_auth/change_password_client" method="post" >
              <h3>Password</h3><br>
              <!-- Password -->
-          <div class="form-group">
+          <div class="form-group has-feedback">
               <label class="col-sm-3 control-label" for="lg">Password</label>
                 <div class="col-sm-9">
                     <input type="password"  class="form-control"  id="password" name="password" placeholder="Masukkan Password Baru" required>
+                    
                 </div>
            </div> 
 
              <!-- Confirm Password -->
-            <div class="form-group">
+            <div class="form-group has-feedback">
               <label class="col-sm-3 control-label" for="lg">Confirm Password</label>
                 <div class="col-sm-9">
                     <input type="password" id="cpassword" class="form-control" name="cpassword" placeholder="Confirm Password  Anda" required>
+                    <i id='gagal' class="glyphicon glyphicon-remove form-control-feedback"  style="color:red"></i>
+                    <i id='sukses' class="glyphicon glyphicon-ok form-control-feedback"  style="color:green"></i>
+                    <div id='pesan'></div>
                 </div>
              </div>
-             <input type="submit" value="Change" class="btn btn-primary" name="submit">
+             <input type="submit" id="submit_pass" value="Change" class="btn btn-primary" name="submit" onclick="validasi()">
           </form>
              
           
