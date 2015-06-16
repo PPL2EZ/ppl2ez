@@ -11,105 +11,113 @@
 <!-- Tab menu Akun Saya-->
          <div class="tab-content">
             <div class="tab-pane active" id="akun">
-                <form name="login" action="<?php echo base_url();?>user_auth/daftar" method="post" role="form" class="form-signin">
-            <table>
-            <tr>
-              <td colspan="3"><h3>Data Personal</h3></td>
-            </tr>
-            <tr>
-              <td>Nama </td>
-              <td>: </td>
-              <td>
-                <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Anda" required value="<?php echo $username; ?>">
-              </td>
-            </tr>
-            <tr>
-              <td>Email </td>
-              <td>: </td>
-              <td>
-                <input type="Email" id="email" name="email" placeholder="Masukkan Email Anda" required value="<?php echo $email; ?>">
-              </td>
-            </tr>
-            <tr>
-              <td>Handphone</td>
-              <td>: </td>
-              <td>
-                <input type="hp" id="hp" name="hp" placeholder="Masukkan No Hp Anda" required value="<?php echo $hp; ?>">
-              </td>
-            </tr>
-            <tr>
-              <td colspan="3"><h3>Alamat</h3></td>
-            </tr>
-            <tr>
-              <td>Alamat </td>
-              <td>: </td>
-              <td>
-                <input type="text" id="alamat" name="alamat" placeholder="Masukkan Alamat Rumah Anda" required value="<?php echo $alamat; ?>">
-              </td>
-            </tr>
-            <tr>
-              <td>Provinsi </td>
-              <td>: </td>
-              <td>
-                <input type="text" id="provinsi" name="provinsi" placeholder="Provinsi" required value="<?php echo $provinsi; ?>">
-            </tr>
-            <tr>
-              <td>Kota / Kabupaten </td>
-              <td>: </td>
-              <td>
-                 <input type="text" id="kota" name="kota" placeholder="Kota / Kabupaten" required value="<?php echo $kota; ?>">
-              </td>
-            </tr>
-            <tr>
-              <td>Kecamatan </td>
-              <td>: </td>
-              <td>
-                <input type="text" id="kecamatan" name="kecamatan" placeholder="Kecamatan" required value="<?php echo $kecamatan; ?>">
-              </td>
-            </tr>
-            <tr>
-              <td>Kelurahan / Desa </td>
-              <td>: </td>
-              <td>
-                 <input type="text" id="kelurahan" name="kelurahan" placeholder="Kelurahan" required value="<?php echo $kelurahan; ?>">
-              </td>
-            </tr>
-            <tr>
-              <td colspan="3"><input type="submit" name="Edit" value="Simpan" class="btn btn-primary"></td>
-            </tr>
+              
+              <!-- ALERT MESSAGE 
+              <div class="alert alert-danger fade in">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  <strong>Error!</strong> A problem has been occurred while submitting your data.
+              </div>
+-->
+              <!-- DATA PERSONAL-->
+              <h3>Data Personal</h3><br>
+            <form name="datauser" class="form-horizontal" role="form" action="<?php echo base_url();?>user_auth/daftar" method="post" >
+              <!-- Nama -->
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Nama</label>
+                  <div class="col-sm-9">
+                     <input type="text" id="nama" class="form-control" id="focusedInput" name="nama" placeholder="Masukkan Nama Anda" required value="<?php echo $username; ?>">
+                  </div>
+              </div>
+
+               <!-- Email -->
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Email</label>
+                  <div class="col-sm-9">
+                     <input type="Email" id="email" name="email" class="form-control" placeholder="Masukkan Email Anda" required value="<?php echo $email; ?>">
+                  </div>
+              </div>
+
+              <!-- HP -->
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Handphone</label>
+                  <div class="col-sm-9">
+                     <input type="hp" id="hp" name="hp" class="form-control" placeholder="Masukkan No Hp Anda" required value="<?php echo $hp; ?>">
+                  </div>
+              </div>
+              <br>
+              <h3>Alamat</h3>
+              <br>
+               <!-- Alamat -->
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Alamat</label>
+                  <div class="col-sm-9">
+                     <input type="text" id="alamat" name="alamat" class="form-control" placeholder="Masukkan Alamat Rumah Anda" required value="<?php echo $alamat; ?>">
+                  </div>
+              </div>
+
+              <!-- Provinsi -->
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Provinsi</label>
+                  <div class="col-sm-9">
+                     <input type="text" id="provinsi" name="provinsi" class="form-control" placeholder="Provinsi" required value="<?php echo $provinsi; ?>">
+                  </div>
+              </div>
+
+              <!-- Kota / Kabupaten -->
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Kota/ Kabupaten</label>
+                  <div class="col-sm-9">
+                     <input type="text" id="kota" name="kota" class="form-control" placeholder="Kota / Kabupaten" required value="<?php echo $kota; ?>">
+                  </div>
+              </div>
+
+               <!-- Kecamatan -->
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Kecamatan</label>
+                  <div class="col-sm-9">
+                     <input type="text" id="kecamatan" name="kecamatan" class="form-control" placeholder="Kecamatan" required value="<?php echo $kecamatan; ?>">
+                  </div>
+              </div>
+
+              <!-- Kelurahan/ Desa -->
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Kelurahan/ Desa</label>
+                  <div class="col-sm-9">
+                     <input type="text" id="kelurahan" name="kelurahan" class="form-control" placeholder="Kelurahan" required value="<?php echo $kelurahan; ?>">
+                  </div>
+              </div>
+    
+
+             <input type="submit" name="Edit" value="Simpan" class="btn btn-primary">
+
               </form> 
 <!-- END FORM -->
-
+            <br><br>
 <!-- Start FOrm -->
-          <form action="<?php echo base_url();?>user_auth/change_password_client" method="post">
-          <!--  <tr>
-              <td colspan="3"><input type="checkbox" name="changepass" value="Change" onChange="changetextbox();">Change Password<br></td>
-            </tr>
-          -->  
-            <tr>
-              <td colspan="3"><h3>Password</h3></td>
-            </tr>
-            <tr>
-              <td>Password </td>
-              <td>: </td>
-              <td>
-                <input type="password" id="password" name="password" placeholder="Masukkan Password Anda" required >
-              </td>
-            </tr>
-            <tr>
-              <td>Confirm Password </td>
-              <td>: </td>
-              <td>
-                <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password  Anda" required>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="3"><input type="submit" name="Edit" value="Change" class="btn btn-primary" name="submit"></td>
-            </tr>
+          <form id="gantipassword" name="gantipassword" class="form-horizontal" role="form"  action="<?php echo base_url();?>user_auth/change_password_client" method="post" >
+             <h3>Password</h3><br>
+             <!-- Password -->
+          <div class="form-group">
+              <label class="col-sm-3 control-label" for="lg">Password</label>
+                <div class="col-sm-9">
+                    <input type="password"  class="form-control"  id="password" name="password" placeholder="Masukkan Password Baru" required>
+                </div>
+           </div> 
+
+             <!-- Confirm Password -->
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="lg">Confirm Password</label>
+                <div class="col-sm-9">
+                    <input type="password" id="cpassword" class="form-control" name="cpassword" placeholder="Confirm Password  Anda" required>
+                </div>
+             </div>
+             <input type="submit" value="Change" class="btn btn-primary" name="submit">
           </form>
-          </table>        
+             
           
-            </div>
+          </div>
+
+
 <!--End Tab menu Akun Saya-->
 <!-- Tab Menu Pesanan-->
             <div class="tab-pane" id="pesanan">
@@ -182,53 +190,62 @@
 <!--End Tab menu pesanan-->
 <!-- Tab Menu konfirmasi-->
             <div class="tab-pane" id="konfirmasi">
-                <form name="login" action="<?php echo base_url();?>client/konfirmasi" enctype="multipart/form-data" method="post">
-            <table>
-            <tr>
-              <td>ID Pesanan </td>
-              <td>: </td>
-              <td>
-                <input type="text" id="id" name="id" placeholder="Masukkan id pesanan" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Dari Bank </td>
-              <td>: </td>
-              <td>
-                <input type="text" id="daribank" name="daribank" placeholder="Dari bank" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Nama Pemilik Rekening</td>
-              <td>: </td>
-              <td>
-                <input type="text" id="npr" name="npr" placeholder="Nama Pemilik Rekening" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Trensfer ke </td>
-              <td>: </td>
-              <td>
-                <input type="text" id="transfer" name="transfer" placeholder="Bank tujuan Transfer" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Jumlah Transfer </td>
-              <td>: </td>
-              <td>
-                 <input type="text" id="jumlahtransfer" name="jumlahtransfer" placeholder="Jumlah Transfer" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Bukti transfer</td>
-              <td>: </td>
-              <td id="bukti"><input type="file" name="userfile" id="upload" size="20" required >
-              </td>
-            </tr>
-            <tr>
-              <td colspan="3"><input type="submit" name="daftar" value="Upload" class="btn btn-primary"></td>
-            </tr>
-          </table>        
+              <br>
+
+              <form name="login" class="form-horizontal" role="form" action="<?php echo base_url();?>client/konfirmasi" enctype="multipart/form-data" method="post">
+              <!-- ID Pesanan -->
+            
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">ID Pesanan</label>
+                  <div class="col-sm-9">
+                     <input type="text" class="form-control" id="focusedInput" name="id" placeholder="Masukkan id pesanan" required>
+                  </div>
+              </div>
+
+             
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Dari Bank</label>
+                  <div class="col-sm-9">
+                     <input type="text" class="form-control"  id="daribank" name="daribank" placeholder="Dari bank" required>
+                  </div>
+              </div>
+
+               <!-- Nama Pemilik Rekening -->
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Nama Pemilik Rekening</label>
+                  <div class="col-sm-9">
+                     <input type="text" class="form-control"  id="npr" name="npr" placeholder="Nama Pemilik Rekening" required>
+                  </div>
+              </div>
+              
+               <!-- Transfer ke -->
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Transfer Ke</label>
+                  <div class="col-sm-9">
+                     <input type="text" class="form-control"  id="transfer" name="transfer" placeholder="Bank tujuan Transfer" required>
+                  </div>
+              </div>
+
+                <!-- Jumlah Transfer -->
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Jumlah Transfer</label>
+                  <div class="col-sm-9">
+                     <input type="text" class="form-control"  id="jumlahtransfer" name="jumlahtransfer" placeholder="Jumlah Transfer" required>
+                  </div>
+              </div>
+
+               <!-- Bukti Transfer -->
+              <div class="form-group">
+                <label class="col-sm-3 control-label" for="lg">Bukti Transfer</label>
+                  <div class="col-sm-9">
+                     <input type="file" name="userfile" id="upload" size="30" required onchange="previewImage(this,[256],1);"><br>
+                      <div class="imagePreview"></div>
+                  </div>
+                  <div class="imagePreview"></div>
+              </div>
+          
+           <input type="submit" name="daftar" value="Upload" class="btn btn-primary">
+     
     </form>  
             </div>
 <!--End Tab menu konfirmasi-->
@@ -244,6 +261,7 @@
   </div>
   <!-- end of main content -->
   <script>
+      //Datatables
       $(document).ready(function(){
         $('#myTable').DataTable();
       });
@@ -251,6 +269,25 @@
       $(document).ready(function(){
         $('#myTable1').DataTable();
       });
+
+      //Validate Ganti Password
+     function validatePassword(){ 
+      var validator = $("#gantipassword").validate({
+        rules: {                   
+           password :"required",
+            confirmpassword:{
+              equalTo: "#password"
+              }  
+              },                             
+            messages: {
+              password :" Enter Password",
+              confirmpassword :" Enter Confirm Password Same as Password"
+           }
+        });
+        if(validator.form()){
+        alert('Sucess');
+        }
+}
 
 
 //function changetextbox()

@@ -104,7 +104,7 @@ class client extends CI_Controller {
 function konfirmasi(){
    $config['upload_path'] = 'uploads/bukti';
     $config['file_name'] = 'bukti_'.date("YmdHis");
-    $config['allowed_types'] = 'gif|jpg|png';
+    $config['allowed_types'] = 'gif|jpg|png|jpeg';
     $config['max_size'] = '1000';
     //$config['max_width']  = '1024';
     //$config['max_height']  = '768';

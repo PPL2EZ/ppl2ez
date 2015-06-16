@@ -254,7 +254,9 @@ if ( ! function_exists('get_config'))
 			}
 		}
 
-		return $_config[0] =& $config;
+		//return $_config[0] =& $config; < 5.6.7 php
+		$_config[0] =& $config;
+		return $_config[0]; 
 	}
 }
 

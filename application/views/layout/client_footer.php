@@ -31,7 +31,6 @@
     <!-- coin-slider -->
 
   <script type="text/javascript" src="<?php echo base_url();?>assets/coin-slider.min.js"></script>
-   
 <!-- end of main_container -->
 </body>
 </html>

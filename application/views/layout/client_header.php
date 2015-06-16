@@ -23,11 +23,14 @@
 
     <!-- Load JQuery dari CDN -->
     <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     
     <!-- Load DataTables dan Bootstrap dari CDN -->
     <script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" language="javascript" src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
     
+    <!-- Image Preview HTML5-->
+    <script type="text/javascript" src="<?php echo base_url();?>assets/htmlimage/html5.image.preview.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css">
 </head>
