@@ -12,6 +12,8 @@ foreach($barang as $barang)
         $harga=$barang->harga;
         $gambar=$barang->gambar;
         $deskripsi=$barang->deskripsi;
+        $ukuran = $barang->ukuran;
+        $stok = $barang->stok;
     }
 ?>
 <div class="center_content">
@@ -22,12 +24,21 @@ foreach($barang as $barang)
     
       <td>
         Kategori : <?php echo $kategori?><br>
-        Stok : <br>
-        &nbsp S : <?php echo $s;?><br>
-        &nbsp m : <?php echo $m?><br>
-        &nbsp l : <?php echo $l?><br>
-        &nbsp xl : <?php echo $xl;?><br>
-        Harga : <?php echo $harga;?>
+        
+        <?php if ($kategori !=3){ ?>
+          Stok : <br>
+          &nbsp S : <?php echo $s;?><br>
+          &nbsp m : <?php echo $m?><br>
+          &nbsp l : <?php echo $l?><br>
+          &nbsp xl : <?php echo $xl;?><br>
+        <?php
+        }else{ ?> 
+          Stok : <?php echo $stok;?><br>
+          Ukuran : <?php echo $ukuran?><br>
+        <?php
+        }
+        ?>
+          Harga : <?php echo $harga;?>
         
       </td>
     </tr>
