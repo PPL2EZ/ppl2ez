@@ -65,7 +65,7 @@
             <td colspan="6"></td>
           </tr>
           <tr>           
-            <td colspan="6" align="right"><b>Total : <?php echo $total?></b></td>
+            <td colspan="6" align="right"><b>Jumlah yang harus dibayar, Total : <?php echo $total?></b></td>
           </tr>
          </tbody> 
 

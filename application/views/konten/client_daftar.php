@@ -1,105 +1,92 @@
 <script type="text/javascript" src="<?php echo base_url;?>assets/js/jquery-1.7.2.min.js"></script>
 <div class="center_content">
-      <div class="prod_box">
-      <form name="login" action="<?php echo base_url();?>user_auth/daftar" method="post" role="form" class="form-signin">
+
+      <form name="login"  class="form-horizontal" role="form"  action="<?php echo base_url();?>user_auth/daftar" method="post">
 
           <h1 align="center"><?php echo $title;?></h1><br>
-          <table>
-            <tr>
-              <td colspan="3"><h3>Data Personal</h3></td>
-            </tr>
-            <tr>
-              <td>Nama </td>
-              <td>: </td>
-              <td>
-                <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Anda" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Email </td>
-              <td>: </td>
-              <td>
-                <input type="Email" id="email" name="email" placeholder="Masukkan Email Anda" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Handphone</td>
-              <td>: </td>
-              <td>
-                <input type="hp" id="hp" name="hp" placeholder="Masukkan No Hp Anda" required>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="3"><h3>Alamat</h3></td>
-            </tr>
-            <tr>
-              <td>Alamat </td>
-              <td>: </td>
-              <td>
-                <input type="text" id="alamat" name="alamat" placeholder="Masukkan Alamat Rumah Anda" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Provinsi </td>
-              <td>: </td>
-              <td>
-                <input type="text" id="provinsi" name="provinsi" placeholder="Provinsi" required>
-                <!--<select>
+          <b><h3>Data Personal</h3></b><br>
 
-                  <option value="">Pilih Provinsi</option>
+          <div class="form-group has-feedback">
+            <label class="col-sm-3 control-label" for="lg">Nama</label>
+              <div class="col-sm-6">
+                  <input type="text"  class="form-control"  id="nama" name="nama" placeholder="Masukkan Nama Anda" required>
+              </div>
+          </div> 
 
-                  <?php 
-                      //$queryProvinsi=mysql_query("SELECT * FROM inf_lokasi where lokasi_kabupatenkota=0 and lokasi_kecamatan=0 and lokasi_kelurahan=0 order by lokasi_nama");
-                      //while ($dataProvinsi=mysql_fetch_array($queryProvinsi)){
-                      //  echo '<option value="'.$dataProvinsi['lokasi_propinsi'].'">'.$dataProvinsi['lokasi_nama'].'</option>';
-                      //}
-                  ?>
-                  
-                </select>
-              </td>-->
-            </tr>
-            <tr>
-              <td>Kota / Kabupaten </td>
-              <td>: </td>
-              <td>
-                 <input type="text" id="kota" name="kota" placeholder="Kota / Kabupaten" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Kecamatan </td>
-              <td>: </td>
-              <td>
-                <input type="text" id="kecamatan" name="kecamatan" placeholder="Kecamatan" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Kelurahan / Desa </td>
-              <td>: </td>
-              <td>
-                 <input type="text" id="kelurahan" name="kelurahan" placeholder="Kelurahan" required>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="3"><h3>Password</h3></td>
-            </tr>
-            <tr>
-              <td>Password </td>
-              <td>: </td>
-              <td>
-                <input type="password" id="password" name="password" placeholder="Masukkan Password Anda" required>
-              </td>
-            </tr>
-            <tr>
-              <td>Confirm Password </td>
-              <td>: </td>
-              <td>
-                <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password  Anda" required>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="3"><input type="submit" name="daftar" value="Daftar" class="btn btn-primary"></td>
-            </tr>
-          </table>        
+          <div class="form-group has-feedback">
+            <label class="col-sm-3 control-label" for="lg">Email</label>
+              <div class="col-sm-6">
+                  <input type="email"  class="form-control"  id="email" name="email" placeholder="Masukkan Email Anda" required>
+              </div>
+          </div> 
+
+          <div class="form-group has-feedback">
+            <label class="col-sm-3 control-label" for="lg">Handphone</label>
+              <div class="col-sm-6">
+                  <input type="text"  class="form-control"  id="hp" name="hp" placeholder="Masukkan No Hp Anda" required>
+              </div>
+          </div> 
+
+           <b><h3>Alamat</h3></b><br>
+
+           <div class="form-group has-feedback">
+            <label class="col-sm-3 control-label" for="lg">Alamat</label>
+              <div class="col-sm-6">
+                  <input type="text"  class="form-control"  id="alamat" name="alamat" placeholder="Alamat" required>
+              </div>
+          </div> 
+
+          <div class="form-group has-feedback">
+            <label class="col-sm-3 control-label" for="lg">Provinsi</label>
+              <div class="col-sm-6">
+                  <input type="text"  class="form-control"  id="provinsi" name="provinsi" placeholder="Provinsi" required>
+              </div>
+          </div> 
+
+          <div class="form-group has-feedback">
+            <label class="col-sm-3 control-label" for="lg">Kota/ Kabupaten</label>
+              <div class="col-sm-6">
+                  <input type="text"  class="form-control"  id="kota" name="kota" placeholder="Kota/ Kabupaten" required>
+              </div>
+          </div> 
+
+          <div class="form-group has-feedback">
+            <label class="col-sm-3 control-label" for="lg">Kecamatan</label>
+              <div class="col-sm-6">
+                  <input type="text"  class="form-control"  id="kecamatan" name="kecamatan" placeholder="Kecamatan" required>
+              </div>
+          </div> 
+
+          <div class="form-group has-feedback">
+            <label class="col-sm-3 control-label" for="lg">Kelurahan / Desa</label>
+              <div class="col-sm-6">
+                  <input type="text"  class="form-control"  id="kelurahan" name="kelurahan" placeholder="Kelurahan" required>
+              </div>
+          </div> 
+          
+           <b><h3>Password</h3></b><br>
+
+            <div class="form-group has-feedback">
+              <label class="col-sm-3 control-label" for="lg">Password</label>
+                <div class="col-sm-6">
+                    <input type="password"  class="form-control"  id="password" name="password" placeholder="Masukkan Password Baru" required>
+                     <i id='gagalp' class="glyphicon glyphicon-remove form-control-feedback"  style="color:red"></i>
+                    <i id='suksesp' class="glyphicon glyphicon-ok form-control-feedback"  style="color:green"></i>
+                </div>
+           </div> 
+
+             <!-- Confirm Password -->
+            <div class="form-group has-feedback">
+              <label class="col-sm-3 control-label" for="lg">Confirm Password</label>
+                <div class="col-sm-6">
+                    <input type="password" id="cpassword" class="form-control" name="cpassword" placeholder="Confirm Password  Anda" required>
+                    <i id='gagal' class="glyphicon glyphicon-remove form-control-feedback"  style="color:red"></i>
+                    <i id='sukses' class="glyphicon glyphicon-ok form-control-feedback"  style="color:green"></i>
+                    <div id='pesan'></div>
+                </div>
+             </div>
+            <br>
+            <input type="submit" name="daftar" value="Daftar" class="btn btn-primary ">      
     </form>  
         
       </div>
