@@ -59,11 +59,11 @@
                                                 <td><input type="text" id="bp" name="bp" value="<?php if (empty($bp)){}else{echo $bp;}?>"></td>
                                                 <td><input type="text" id="t" name="t" value="<?php if (empty($bp)){}else{echo $total;}?>"></td>
                                                 <td>
-                                                 <select name='kategori'>
-                                                    <option value="unpaid">Unpaid</option>
-                                                    <option value="paid">Paid</option>
-                                                    <option value="pengiriman">Pengiriman</option>
-                                                    <option value="batal">Batal</option>
+                                                 <select name="kategori">
+                                                    <option value="unpaid">unpaid</option>
+                                                    <option value="paid">paid</option>
+                                                    <option value="pengiriman">pengiriman</option>
+                                                    <option value="batal">batal</option>
                                                     <option value="confirmed">confirmed</option>
                                                     <option value="unconfirmed">unconfirmed</option>
                                                 <?php 

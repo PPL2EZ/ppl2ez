@@ -194,7 +194,9 @@
 				'qty'				=> $item['qty'],
 				'price'				=> $item['price'],
 				'options'				=> $item['options']['Size']
-			);
+			); 
+			
+
 			$this->db->insert('orders', $data);
 
 			//update stok
@@ -202,10 +204,10 @@
 				'out' => $data['qty'],
 				'in' => 0
 			);
-			$update = "UPDATE stok SET stok.out=$stok[out], stok.masuk=$stok[in]";
-			$this->db->query($update);
+			//$update = "UPDATE stok SET stok.out=$stok[out], stok.masuk=$stok[in]";
+			//$this->db->query($update);
 
-			$query = "UPDATE barang1, stok set barang1.$data[options] = (barang1.$data[options] - $data[qty]) where barang1.id = $data[product_id]";
+			$query = "UPDATE barang1 set barang1.$data[options] = (barang1.$data[options] - $data[qty]) where barang1.id = $data[product_id]";
 			$this->db->query($query);
 
 		}
@@ -313,22 +315,30 @@
           	'qty' =>$result[0]->qty
         );
         
-    	if ($get['status']='batal'){
-    		$query1 = "UPDATE barang1 set barang1.$data[options] = (barang1.$data[options] + $data[qty]) where barang1.id = $data[id]";
-    		$this->db->query($query1);
+    	if ($get['status']=='batal'){
+    		$query1 = "UPDATE barang1, invoices set barang1.$data[options] = (barang1.$data[options] + $data[qty]), invoices.status='$get[status]' where barang1.id = $data[id]";
+    		$hasil = $this->db->query($query1);
+    		if($hasil){
+            	return true;
+        	} else {
+	            return false;       
+	   	 	}
+    	}else{
+    		//update status
+    		$query = "UPDATE invoices, orders SET invoices.status='$get[status]', orders.pengiriman=$get[pengiriman], orders.total_harga=$get[total_harga] WHERE invoices.id=$get[id] AND invoices.id=orders.invoice_id";
+    		$hasil = $this->db->query($query);
+    		if($hasil){
+            	return true;
+        	} else {
+	            return false;       
+	   	 	}
     	}
-		//update status
-    	$query = "UPDATE invoices, orders SET invoices.status='$get[status]', orders.pengiriman=$get[pengiriman], orders.total_harga=$get[total_harga] WHERE invoices.id=$get[id] AND invoices.id=orders.invoice_id";
-    	$hasil = $this->db->query($query);
+	
 
     	
     	
     	
-    	if($hasil){
-            return true;
-        } else {
-	            return false;       
-	    }
+    	
     	
     } 
 

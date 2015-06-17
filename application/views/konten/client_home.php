@@ -5,24 +5,24 @@
         <div id='gamesHolder'>
       <div class='coin-slider' id='coin-slider'>
         
-          <img src='<?php echo base_url(); ?>uploads/gbr_20150511000324.png' >
+          <img src='<?php echo base_url(); ?>assets/images/slider1.jpgg' >
           <span>
-            Description for img01
+            FootBall Addict
           </span>
         
   ......
   ......
         
-          <img src='<?php echo base_url(); ?>uploads/gbr_20150511004103.jpg' >
+          <img src='<?php echo base_url(); ?>assets/images/slider2.jpg' >
           <span>
-           Description for imgN
+            Sepatu Futsal 
           </span>
 
-          <img src='<?php echo base_url(); ?>uploads/gbr_20150524174451.jpg' >
+          <img src='<?php echo base_url(); ?>assets/images/slider3.jpg' >
           <span>
-           Description for imgN
+            Jersey
           </span>
-       gbr_20150524174451.jpg
+
       </div>
     </div>
 

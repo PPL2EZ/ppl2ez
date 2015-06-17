@@ -60,7 +60,7 @@ class kelbar extends CI_Controller {
 		else{
 			$gambar = $this->upload->data();
 			$data = array(
-					'kategori' => $this->input->post('kategori'),
+					'kategori' => $this->input->post('kategorii'),
 					'nama_barang' => $this->input->post('nambar'),
 					's' => $this->input->post('s'),
 					'm' => $this->input->post('m'),
