@@ -1,8 +1,11 @@
 $(document).ready(function(){
 	//Menyembunyikan glype icon
 	$("#gagal").hide();  
-	$("#sukses").hide();      
-	$("#cpassword").change(function(){
+	$("#sukses").hide();    
+   $("#suksesp").hide();
+    $("#gagalp").hide();
+
+	$("#cpassword, #password").change(function(){
          var password		= $("#password").val();
          var cpassword		= $("#cpassword").val();
 
@@ -12,13 +15,17 @@ $(document).ready(function(){
          	$("#cpassword").css('border','2px red solid');
          	$("#pesan").html("Password Didnt Match"); 
          	$("#gagal").show(); 
-         	$("#sukses").hide();         	
+         	$("#sukses").hide(); 
+            $("#gagalp").show(); 
+            $("#suksesp").hide();         	
          }else{
          	//alert('Password Match');
          	$("#cpassword").css('border','');
          	$("#pesan").html("Password Match");   
          	$("#gagal").hide();
-         	$("#sukses").show();      	
+         	$("#sukses").show();     
+            $("#gagalp").hide();
+            $("#suksesp").show();   	
          }
 	})
 

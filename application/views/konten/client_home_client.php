@@ -101,7 +101,8 @@
               <label class="col-sm-3 control-label" for="lg">Password</label>
                 <div class="col-sm-9">
                     <input type="password"  class="form-control"  id="password" name="password" placeholder="Masukkan Password Baru" required>
-                    
+                     <i id='gagalp' class="glyphicon glyphicon-remove form-control-feedback"  style="color:red"></i>
+                    <i id='suksesp' class="glyphicon glyphicon-ok form-control-feedback"  style="color:green"></i>
                 </div>
            </div> 
 

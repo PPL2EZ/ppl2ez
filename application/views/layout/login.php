@@ -47,7 +47,7 @@
 					<input type="Email" id="inputEmail" name="email" class="form-control" placeholder="Masukkan Email anda" required>
 					<label for="password">Password</label>
 					<input type="Password" id="password" name="password" class="form-control" placeholder="Masukkan Password Anda" required>
-						<a href="forgotpassword.php" style="color:red">Forgot Password ?</a>	
+						<!-- <a href="forgotpassword.php" style="color:red">Forgot Password ?</a> -->	
 					<br>
 						<input type="submit" name="loginklik" value="Login" class="btn btn-primary">
 
