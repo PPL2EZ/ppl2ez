@@ -34,6 +34,7 @@
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/validasi.js"></script>
 
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css">
+     
 </head>
 <body>
 
