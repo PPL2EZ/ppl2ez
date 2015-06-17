@@ -57,8 +57,8 @@
                                                 <td><?php echo $daftar->harga; ?></td>
                                                  <td><?php echo $daftar->deskripsi; ?></td> 
                                                 <td>
-                                                   <a href="<?php echo base_url();?>kelbar/delete_barang?id=<?php echo $daftar->id; ?>">delete</a>
-                                                    <a href="<?php echo base_url();?>adminadmin/edit_barang?id=<?php echo $daftar->id; ?>">edit</a>
+                                                   <a href="<?php echo base_url();?>kelbar/delete_barang?id=<?php echo $daftar->id; ?>" class="btn btn-danger">delete</a>
+                                                    <a href="<?php echo base_url();?>adminadmin/edit_barang?id=<?php echo $daftar->id; ?>" class="btn btn-success">edit</a>
                                                     
                                                 </td>
                                             </tr>

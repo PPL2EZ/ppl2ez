@@ -37,8 +37,8 @@
                                                 <td><?php echo $data->qty; ?></td>-->
                                                 <td><?php echo $data->status; ?></td>
                                                 <td>
-                                                      <a href="<?php echo base_url();?>adminadmin/delete_invoice_admin?id=<?php echo $data->id; ?>">Delete</a>
-                                                        <a href="<?php echo base_url();?>adminadmin/konfirmasi_invoice?id=<?php echo $data->id; ?>">Edit</a>
+                                                      <a href="<?php echo base_url();?>adminadmin/delete_invoice_admin?id=<?php echo $data->id; ?>" class="btn btn-danger">Delete</a>
+                                                        <a href="<?php echo base_url();?>adminadmin/konfirmasi_invoice?id=<?php echo $data->id; ?>" class="btn btn-success">Edit</a>
                                                 </td>
 
                                             </tr>
