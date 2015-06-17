@@ -18,7 +18,7 @@
     </div>
     
     <div class="right_footer"> 
-    	<img src="<?php echo base_url();?>\assets\images\fb.png" alt="" border="0" width="94" height="92" />
+    	<a href="https://www.facebook.com/FA.semarang" target="_blank"><img src="<?php echo base_url();?>\assets\images\fb.png" alt="" border="0" width="94" height="92" /></a>
     </div>
  	
    
