@@ -66,6 +66,9 @@ class kelbar extends CI_Controller {
 					'm' => $this->input->post('m'),
 					'l' => $this->input->post('l'),
 					'xl' => $this->input->post('xl'),
+					//sepatu
+					'ukuran' => $this->input->post('ukuran'),
+					'stok' => $this->input->post('stok'),
 					'berat' => $this->input->post('berat'),
 					'harga' => $this->input->post('harga'),
 					'gambar' => $gambar['raw_name'].$gambar['file_ext'],

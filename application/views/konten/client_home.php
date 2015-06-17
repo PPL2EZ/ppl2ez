@@ -51,8 +51,8 @@
         <div class="prod_box">
         <div class="top_prod_box"></div>
         <div class="center_prod_box">
-          <div class="product_title"><a href="details.html"><?php echo $bar->nama_barang;?></a></div>
-          <div class="product_img"><a href="details.html"><img src="<?php echo base_url();?>uploads/<?php echo $bar->gambar; ?>" alt="" border="0" width="94" height="92" /></a></div>
+          <div class="product_title"><?php echo $bar->nama_barang;?></a></div>
+          <div class="product_img"><img src="<?php echo base_url();?>uploads/<?php echo $bar->gambar; ?>" alt="" border="0" width="94" height="92" /></a></div>
           <div class="prod_price"><span class="price">Rp <?php echo $bar->harga;?></span></div>
         </div>
         <div class="bottom_prod_box"></div>
