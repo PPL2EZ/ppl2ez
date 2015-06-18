@@ -20,7 +20,7 @@
 -->
               <!-- DATA PERSONAL-->
               <h3>Data Personal</h3><br>
-            <form name="datauser" class="form-horizontal" role="form" action="<?php echo base_url();?>user_auth/daftar" method="post" >
+            <form name="datauser" class="form-horizontal" role="form" action="<?php echo base_url();?>client/save_edit" method="post" >
               <!-- Nama -->
               <div class="form-group">
                 <label class="col-sm-3 control-label" for="lg">Nama</label>
@@ -203,11 +203,21 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label" for="lg">ID Pesanan</label>
                   <div class="col-sm-9">
-                     <input type="text" class="form-control" id="focusedInput" name="id" placeholder="Masukkan id pesanan" required>
+                     <!--<input type="text" class="form-control" id="focusedInput" name="id" placeholder="Masukkan id pesanan" required>-->
+                    <select name='invoice' id='invoice' class="form-control">
+                      <option selected value="0">---Pilih Invoice---</option>
+                        <?php 
+                          foreach($pesanan as $row)
+                          { 
+                            echo '<option value="'.$row->id.'">'.$row->id.'</option>';
+                          }
+                        ?>                      
+                    </select>
+
                   </div>
               </div>
 
-             
+             <div id="details" style="display: none;">
               <div class="form-group">
                 <label class="col-sm-3 control-label" for="lg">Dari Bank</label>
                   <div class="col-sm-9">
@@ -235,7 +245,7 @@
               <div class="form-group">
                 <label class="col-sm-3 control-label" for="lg">Jumlah Transfer</label>
                   <div class="col-sm-9">
-                     <input type="text" class="form-control"  id="jumlahtransfer" name="jumlahtransfer" placeholder="Jumlah Transfer" required>
+                     <input type="text" class="form-control"  id="jumlahtransfer" name="jumlahtransfer" placeholder="Jumlah Transfer" required pattern="[0-9]{1,}" title="Masukan berupa angka">
                   </div>
               </div>
 
@@ -250,6 +260,7 @@
               </div>
           
            <input type="submit" name="daftar" value="Upload" class="btn btn-primary">
+         </div>
      
     </form>  
             </div>

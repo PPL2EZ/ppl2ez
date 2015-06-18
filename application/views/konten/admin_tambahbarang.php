@@ -13,12 +13,27 @@
                     </div>
 					 <div class="col-lg-12">
                         
-                        <form action='<?php echo base_url();?>kelbar/do_upload' class="form-horizontal" enctype="multipart/form-data" method='post'>
+                        <form action='<?php echo base_url();?>kelbar/do_upload' class="form-horizontal" enctype="multipart/form-data" method='post' id="tambahbarang">
                              <!-- Kategori -->
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="lg">Kategori</label>
                                     <div class="col-sm-4" >
-                                        <select name='kategorii' id='kategorii' >
+                                       <!--
+                                        <div class="dropdown">
+                                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="kategorii">---Pilih Kategori---
+                                                <span class="caret"></span></button>
+                                                <ul class="dropdown-menu">
+                                                    <?php 
+                                                    foreach($query as $row)
+                                                    { 
+                                                        echo '<li><a href="#" id="'.$row->id.'">'.$row->kategori.'</a></li>';
+
+                                                    }
+                                                ?>
+                                                </ul>
+                                        </div> -->
+                                        
+                                        <select name='kategorii' id='kategorii' class="form-control">
                                             <option value="" selected>---Pilih Kategori---</option>
                                                 <?php 
                                                     foreach($query as $row)
@@ -26,6 +41,7 @@
                                                         echo '<option value="'.$row->id.'">'.$row->kategori.'</option>';
                                                     }
                                                 ?>
+                                              
                                         </select>
                                     </div>
                             </div>

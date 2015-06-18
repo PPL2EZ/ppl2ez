@@ -90,8 +90,8 @@
                                                  <td><img alt="Thumbnail image" src="<?php echo base_url();?>uploads/bukti/<?php echo $data->scan_struk?>" class="img-thumbnail" width="150" height="200"></td>
                                                
                                                 <td>
-                                                      <a href="<?php echo base_url();?>adminadmin/delete_bukti?id=<?php echo $data->id_invoice; ?>" class="btn btn-danger">Delete</a>
-                                                        <a href="<?php echo base_url();?>adminadmin/accept_bukti?id=<?php echo $data->id_invoice; ?>" class="btn btn-primary">Accept</a>
+                                                      <a href="<?php echo base_url();?>adminadmin/delete_bukti?id=<?php echo $data->id_invoice; ?>" class="btn btn-danger" onclick="this.disabled = 'disabled';">Delete</a>
+                                                        <a href="<?php echo base_url();?>adminadmin/accept_bukti?id=<?php echo $data->id_invoice; ?>" class="btn btn-primary" onclick="this.disabled = 'disabled';">Accept</a>
                                                 </td>
 
                                             </tr>

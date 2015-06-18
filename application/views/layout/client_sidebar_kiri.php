@@ -25,8 +25,8 @@
         <div class="title_box">Login</div>
       <div class="border_box">
         <form action="<?php echo base_url();?>user_auth/login_client" method="post">
-          <input type="text" name="email" class="newsletter_input" value="your email" required/>
-          <input type="password" name="password" class="newsletter_input" value="your password" required/>
+          <input type="text" name="email" class="newsletter_input" placeholder="your email" required/>
+          <input type="password" name="password" class="newsletter_input" placeholder="your password" required/>
         <input type="submit" name="login" value="Login" class="btn btn-primary">
         </form>
 

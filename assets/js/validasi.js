@@ -63,7 +63,8 @@ $(document).ready(function(){
          }
    })
 
-   $("#kategorii").change(function(){
+   //Membedakan antara sepatu dan baju
+   $("#kategorii").click(function(){
       var e = document.getElementById("kategorii");
       var struser = e.options[e.selectedIndex].value;
 
@@ -80,6 +81,20 @@ $(document).ready(function(){
       }
 
    })
+
+   $("#invoice").change(function(){
+      var e = document.getElementById("invoice");
+      var struser = e.options[e.selectedIndex].value;
+
+      if (struser == 0){
+             $("#details").hide();    
+      }else{
+           $("#details").show();       
+      }
+
+   })
+
+
 
 
 });

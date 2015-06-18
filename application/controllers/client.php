@@ -30,6 +30,7 @@ class client extends CI_Controller {
       $result = $this->login_auth->read_client_information1($session_data);
       if($result){
         $data = array(
+          'title'=>"Football Addict",
           'id' =>$result[0]->id,
           'username' =>$result[0]->nama,
           'email' =>$result[0]->email,
@@ -42,6 +43,7 @@ class client extends CI_Controller {
           'password' =>$result[0]->password,
           'isi' => 'konten/client_home_client.php',
           'kat' => 'Barang Terbaru'
+
         );
 
         $data['login']=false;
@@ -50,6 +52,7 @@ class client extends CI_Controller {
         $data['barang']=$this->kelola->get_barang();
         $data['kategori']=$this->kelola->get_kategori();
         $data['pesanan']=$this->kelola->get_pesanan($data['id']);
+        //$data['pembayaranenable']=$this->kelola-> get_invoice_by_id($data['id']);
         $data['pembayaran']=$this->kelola->get_pembayaran($data['id']);
         //$data['username'] = $session_data['username'];
         $this->load->view('layout/client_wrapper', $data);
@@ -126,7 +129,7 @@ function konfirmasi(){
     $result = $this->login_auth->read_user_information1($session_data);
       $gambar = $this->upload->data();
       $data = array(
-          'id_invoice' => $this->input->post('id'),
+          'id_invoice' => $this->input->post('invoice'),
           'id_user' => $result[0]->id,
           'dari_bank' => $this->input->post('daribank'),
           'nama_pemilik' => $this->input->post('npr'),
@@ -150,6 +153,38 @@ function konfirmasi(){
           //$this->load->view('layout/wrapper', $data);    
     }
  }
+
+  //fungsi untuk menyimpan data setelah dilakukan perubahan
+  public function save_edit(){
+
+      $session_data = $this->session->userdata('client');
+      $result = $this->login_auth->read_client_information1($session_data);
+
+     
+
+      $data = array(
+          'id' => $this->input->post('id'),
+          'nama' => $this->input->post('nama'),
+          'email' => $this->input->post('email'),
+          'no_hp' => $this->input->post('hp'),
+          'alamat' => $this->input->post('alamat'),
+          'provinsi' => $this->input->post('provinsi'),
+          'kota' => $this->input->post('kota'),
+          'kecamatan' => $this->input->post('kecamatan'),
+        );
+       $data['id'] = $result[0]->id;
+     
+      $result=$this->kelola->update_user($data);
+      if ($result == TRUE){
+        echo "<script type='text/javascript'>alert('Edit Berhasil !')</script>";
+      } else {
+        echo "<script type='text/javascript'>alert('Edit Gagal !')</script>";
+      }
+
+      redirect('client', 'refresh');
+   
+    
+  }
 
 
 
