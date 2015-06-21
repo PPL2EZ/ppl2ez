@@ -65,13 +65,34 @@
 		return $query -> result();
 	}
 
+	function get_kat_bar(){
+		$query = "SELECT kategori1.kategori , barang1.kategori  
+				FROM kategori1, barang1
+				WHERE kategori1.kategori = barang1.kategori";
+        //Get all invoices from Invoices table
+        $hasil = $this->db->query($query);
+        if($hasil->num_rows() > 0){
+            return $hasil->result();
+        } else {
+            return false;
+        }
+	}
+
 	function edit_barang($get){
-		$condition = "id =". "'" . $get . "'";
+		$query = "SELECT barang1.*, kategori1.kategori
+				FROM barang1, kategori1
+				WHERE barang1.kategori = kategori1.id and barang1.id=$get";
+        //Get all invoices from Invoices table
+        $hasil = $this->db->query($query);
+            return $hasil->result();
+  
+		/**$condition = "id =". "'" . $get . "'";
 		$this->db->select('*');
 		$this->db->from('barang1');
 		$this->db->where($condition);
 		$query = $this->db->get();
 		return $query -> result();
+		**/
 	}
 
 

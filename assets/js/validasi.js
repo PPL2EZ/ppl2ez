@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	//Menyembunyikan glype icon
 	$("#gagal").hide();  
 	$("#sukses").hide();    
@@ -92,6 +93,10 @@ $(document).ready(function(){
            $("#details").show();       
       }
 
+   })
+
+   $(".deluser").click(function(){
+           $(this).prop('disabled',true);
    })
 
 

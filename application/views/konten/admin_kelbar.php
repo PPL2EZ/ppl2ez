@@ -38,20 +38,43 @@
                                                 <td><?php echo $daftar->kategori;?></td> 
                                                 <td><?php echo $daftar->nama_barang; ?></td>
                                                 <td>
-                                                    <table>
-                                                        <tr>
-                                                            <td>S</td>
-                                                            <td>M</td>
-                                                            <td>L</td>
-                                                            <td>XL</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><?php echo $daftar->s; ?></td>
-                                                            <td><?php echo $daftar->m; ?></td>
-                                                            <td><?php echo $daftar->l; ?></td>
-                                                            <td><?php echo $daftar->xl; ?></td>
-                                                        </tr>
-                                                    </table>
+                                                                                                        <!-- Trigger the modal with a button -->
+                                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Detail</button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="myModal" role="dialog">
+                                                        <div class="modal-dialog">
+    
+                                                        <!-- Modal content-->
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                              <h4 class="modal-title">Detail Stok : <?php echo $daftar->nama_barang; ?></h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                            <table class="table table-bordered">
+                                                            <tr>
+                                                                <th>S</th>
+                                                                <th>M</th>
+                                                                <th>L</th>
+                                                                <th>XL</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><?php echo $daftar->s; ?></td>
+                                                                <td><?php echo $daftar->m; ?></td>
+                                                                <td><?php echo $daftar->l; ?></td>
+                                                                <td><?php echo $daftar->xl; ?></td>
+                                                            </tr>
+                                                            </table>
+                                                   
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                          
+                                                        </div>
+                                                    </div>
                                                 </td>
                                                 <td><?php echo $daftar->berat; ?></td> 
                                                 <td><?php echo $daftar->harga; ?></td>

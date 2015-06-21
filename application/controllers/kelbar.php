@@ -114,24 +114,43 @@ class kelbar extends CI_Controller {
 		$this->load->library('upload', $config);
  
 		if (!$this->upload->do_upload()){			
- 			$data = array(
-          		'isi' => 'konten/admin_kelbar'
-       		);
-       		
-       		$data['message'] = array('error' => $this->upload->display_errors());
-       		echo "<script type='text/javascript'>alert('".$data['message']['error']."')</script>";
-        	//$this->load->view('layout/wrapper', $data);
-       		redirect('adminadmin/kelola_barang', 'refresh');
-		}
-		else{
-			$gambar = $this->upload->data();
 			$data = array(
-					'kategori' => $this->input->post('kategori'),
+					'kategori' => $this->input->post('kategorii'),
 					'nama_barang' => $this->input->post('nambar'),
 					's' => $this->input->post('s'),
 					'm' => $this->input->post('m'),
 					'l' => $this->input->post('l'),
 					'xl' => $this->input->post('xl'),
+					//sepatu
+					'ukuran' => $this->input->post('ukuran'),
+					'stok' => $this->input->post('stok'),
+					'berat' => $this->input->post('berat'),
+					'harga' => $this->input->post('harga'),
+					
+					'deskripsi' => $this->input->post('deskripsi')
+				);
+			$data['id'] = $get;
+			$result=$this->kelola->update_barang($data);
+			if ($result == TRUE){
+				echo "<script type='text/javascript'>alert('Upload Berhasil !')</script>";
+			} else {
+				echo "<script type='text/javascript'>alert('Upload Gagal !')</script>";
+			}
+			//$pesan = 'sukses';
+			redirect('adminadmin/kelola_barang', 'refresh');
+		}
+		else{
+			$gambar = $this->upload->data();
+			$data = array(
+					'kategori' => $this->input->post('kategorii'),
+					'nama_barang' => $this->input->post('nambar'),
+					's' => $this->input->post('s'),
+					'm' => $this->input->post('m'),
+					'l' => $this->input->post('l'),
+					'xl' => $this->input->post('xl'),
+					//sepatu
+					'ukuran' => $this->input->post('ukuran'),
+					'stok' => $this->input->post('stok'),
 					'berat' => $this->input->post('berat'),
 					'harga' => $this->input->post('harga'),
 					'gambar' => $gambar['raw_name'].$gambar['file_ext'],

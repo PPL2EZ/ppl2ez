@@ -239,6 +239,7 @@ function my_account(){
           'isi' => 'konten/admin_editbarang'
         );
      $data['barang'] = $this->kelola->edit_barang($get);
+     // $data['katbar'] = $this->kelola->get_kat_bar();
      $data['query'] = $this->kelola->get_kategori();
 
         //$data['username'] = $session_data['username'];

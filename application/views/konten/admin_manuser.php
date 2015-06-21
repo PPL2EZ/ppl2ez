@@ -35,7 +35,7 @@
                                                 <td><?php echo $data->email; ?></td>
                                                 <td><?php echo $data->alamat; ?></td>
                                                 <td>
-                                                      <a href="<?php echo base_url();?>keluser/delete_user?id=<?php echo $data->id; ?>" class="btn btn-danger">Delete</a>
+                                                      <a href="#" class="deluser btn btn-danger" >Delete</a>
                                                         <a href="<?php echo base_url();?>keluser/edit_user?id=<?php echo $data->id; ?>" class="btn btn-success">Edit</a>
                                                 </td>
 
