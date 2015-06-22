@@ -10,6 +10,8 @@
         $m=$barang->m;
         $l=$barang->l;
         $xl=$barang->xl;
+        $ukuran=$barang->ukuran;
+        $stok=$barang->stok;
         $berat=$barang->berat;
         $harga=$barang->harga;
         $gambar=$barang->gambar;
@@ -96,13 +98,13 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="lg">Ukuran</label>
                                     <div class="col-sm-4">
-                                        <input type="text" id="ukuran" class="form-control"  name="ukuran" placeholder="Masukan dalam integer" >
+                                        <input type="text" id="ukuran" class="form-control"  name="ukuran" value="<?php echo $ukuran;?>" >
                                     </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="lg">Stok</label>
                                     <div class="col-sm-4">
-                                        <input type="text" id="stok" class="form-control"  name="stok" placeholder="Masukan dalam integer" >
+                                        <input type="text" id="stok" class="form-control"  name="stok" value="<?php echo $stok;?>" >
                                     </div>
                             </div>
                         </div>
