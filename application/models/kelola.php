@@ -84,7 +84,10 @@
 				WHERE barang1.kategori = kategori1.id and barang1.id=$get";
         //Get all invoices from Invoices table
         $hasil = $this->db->query($query);
-            return $hasil->result();
+
+        	 return $hasil->result();
+
+
   
 		/**$condition = "id =". "'" . $get . "'";
 		$this->db->select('*');

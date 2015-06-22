@@ -99,7 +99,29 @@ $(document).ready(function(){
            $(this).prop('disabled',true);
    })
 
+   $(".mymodal").click(function(){
+      var element = $(this);
+      var clas = element.attr("id");
+     // var el_id = $("#detil_"+id);        
 
+
+                               $.ajax({
+                                  url:"http://localhost/ppl2ez/ajax/get?id="+clas,              
+                                    dataType : "json",
+                                     type: "POST",
+                                   //data:"op=simpan&harga="+harga.html()+"&jumlah_beli="+jumlah_beli.val()+"&diskon="+diskon.val()+"&id="+simpan_id,
+                                   // data:"id="+14,
+                                   success: function(data){
+
+                                           document.getElementById("modal_namabarang").innerHTML     = data.nama;       
+                                       
+                                }
+
+
+
+   });
+                        
+        });        
 
 
 });
