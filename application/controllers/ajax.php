@@ -28,6 +28,14 @@ class Ajax extends CI_Controller {
 		$result = $this->kelola->edit_barang($get);
 		$array = array(
           'nama' => $result[0]->nama_barang,
+          's' => $result[0]->s,
+          'm' => $result[0]->m,
+          'l' => $result[0]->l,
+          'xl' => $result[0]->xl,
+          'ukur' => $result[0]->ukuran,
+          'jml' => $result[0]->stok,
+          'kategori' => $result[0]->kategori
+
          
         );
 

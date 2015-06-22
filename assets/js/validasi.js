@@ -99,29 +99,42 @@ $(document).ready(function(){
            $(this).prop('disabled',true);
    })
 
+   //Modal Selain sepatu futsal
+   $(".mymodal2").click(function(){
+      var element = $(this);
+      var clas = element.attr("id");
+     
+      $.ajax({
+        url:"http://localhost/ppl2ez/ajax/get?id="+clas,              
+        dataType : "json",
+        type: "POST",
+
+        success: function(data){
+          document.getElementById("modal_namabarang").innerHTML     = data.nama; 
+          document.getElementById("s").innerHTML     = data.s;   
+          document.getElementById("m").innerHTML     = data.m;
+          document.getElementById("l").innerHTML     = data.l;
+          document.getElementById("xl").innerHTML     = data.xl;      
+        }
+      });                        
+    });        
+
+    //Modal sepatu futsal
    $(".mymodal").click(function(){
       var element = $(this);
       var clas = element.attr("id");
-     // var el_id = $("#detil_"+id);        
+     
+      $.ajax({
+        url:"http://localhost/ppl2ez/ajax/get?id="+clas,              
+        dataType : "json",
+        type: "POST",
 
-
-                               $.ajax({
-                                  url:"http://localhost/ppl2ez/ajax/get?id="+clas,              
-                                    dataType : "json",
-                                     type: "POST",
-                                   //data:"op=simpan&harga="+harga.html()+"&jumlah_beli="+jumlah_beli.val()+"&diskon="+diskon.val()+"&id="+simpan_id,
-                                   // data:"id="+14,
-                                   success: function(data){
-
-                                           document.getElementById("modal_namabarang").innerHTML     = data.nama;       
-                                       
-                                }
-
-
-
-   });
-                        
-        });        
-
+        success: function(data){
+          document.getElementById("ukur").innerHTML     = data.ukur; 
+          document.getElementById("jml").innerHTML     = data.jml;   
+ 
+        }
+      });                        
+    });
 
 });
