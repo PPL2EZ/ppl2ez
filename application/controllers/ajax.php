@@ -22,7 +22,7 @@ class Ajax extends CI_Controller {
 	}
 
  				     
-
+	//controller untuk memperoleh stok barang di adminadmin
 	public function get(){
 		$get = $_GET['id'];
 		$result = $this->kelola->edit_barang($get);
@@ -38,15 +38,17 @@ class Ajax extends CI_Controller {
 
          
         );
-
-		 //$array[0];
-  //echo $array;
-
-       // 
-        //echo $data[nama];
-
         echo json_encode($array);
+	}
 
+	//controller untuk mengecek stok barang sewaktu pembelian
+	public function get2(){
+		
+		$get['id'] = $_GET['id'];
+		$get['ukuran'] = $_POST['ukuran'];
+		$result = $this->kelola->edit_barang2($get);
+		$array = $result[0];
+        echo json_encode($array);
 	}
 
 }

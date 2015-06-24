@@ -90,23 +90,5 @@
 
 <script type="text/javascript">
 
- //<td>Rubah Gambar</td>
-   //                             <td>
-     //                                <select name='rubah_gambar' id='rubah_gambar' onChange="changetextbox();">
-       //                                 <option value="ya" selected="selected">Ya</option>
-         //                               <option value="tidak">Tidak</option>
-           //                         </select>
-             //                   </td>
-//function changetextbox()
-//{
-  //  var form = '<input type="file" name="userfile" id="upload" size="20" required >';
-   // if (document.getElementById("rubah_gambar").value === "tidak") {
-    //    //document.getElementById("upload1").disabled='true';
-     //   document.getElementById("upload2").innerHTML = "";
-    //} else {
-     //   //document.getElementById("upload").disabled='';
-    //           //document.getElementById("myH").innerHTML = "My Sec";
-     //   document.getElementById("upload2").innerHTML = form;
-    //}
-//}
+
 </script>
