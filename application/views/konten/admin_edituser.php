@@ -25,65 +25,63 @@
                         </ol>
                     </div>
 					 <div class="col-lg-12">
-                        
-                        <form action='<?php echo base_url();?>kelbar/do_update' enctype="multipart/form-data" method='post'>
-                            <table>
-                        	<tr>
-                        		<td>Id</td>
-                        		<td> <input type="text" id="id" name="id" value="<?php echo $id;?>" disabled>		
-                        		</td>
-                        	</tr>
-                            <tr>
-                                <td>User Name</td>
-                                <td>
-                                    <input type="text" id="nama" name="nama" value="<?php echo $nama;?>" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>No Handphone</td>
-                                <td>
-                                     <input type="text" id="no_hp" name="no_hp" value="<?php echo $no_hp;?>" required>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td><input type="text" id="email" name="email" value="<?php echo $email;?>" required></td>
-                            </tr>
-                            <tr>
-                                <td>Alamat</td>
-                                <td><input type="text" id="alamat" name="alamat" value="<?php echo $alamat;?>" required></td>
-                            </tr>
-                            <tr>
-                                <td>Provinsi</td>
-                                <td>  <input type="text" id="provinsi" name="provinsi" value="<?php echo $provinsi;?>" required></td>
-                            </tr>
-                            <tr>
-                                <td>Kota</td>
-                                <td> <input type="text" id="kota" name="kota" value="<?php echo $kota;?>" required> </td>
-                            </tr>
-                            <tr>
-                                <td>Kecamatan</td>
-                                <td> <input type="text" id="kecamatan" name="kecamatan" value="<?php echo $kecamatan;?>" required> </td>
-                            </tr>
-                            <tr>
-                                <td><button type="submit" name="update" value="Update" formaction="<?php echo base_url();?>keluser/save_edit?id=<?php echo $id; ?>" class="btn btn-primary">Update</td>
-                                <td></td>
-                            </tr>
+                        <form action='#' method='post' class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="lg">ID</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control"  id="id" name="id" value="<?php echo $id;?>" disabled>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="lg">User Name</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control"  id="nama" name="nama" value="<?php echo $nama;?>" required>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="lg">No Handphone</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control"  id="no_hp" name="no_hp" value="<?php echo $no_hp;?>" required>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="lg">Email</label>
+                                    <div class="col-sm-3">
+                                        <input type="email" class="form-control"  id="email" name="email" value="<?php echo $email;?>" required>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="lg">Alamat</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control"  id="alamat" name="alamat" value="<?php echo $alamat;?>" required>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="lg">Provinsi</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control"  id="provinsi" name="provinsi" value="<?php echo $provinsi;?>" required>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="lg">Kota</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control"  id="kota" name="kota" value="<?php echo $kota;?>" required>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="lg">Kecamatan</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control"  id="kecamatan" name="kecamatan" value="<?php echo $kecamatan;?>" required>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="lg"></label>
+                                    <div class="col-sm-3">
+                                        <button type="submit" name="update" value="Update" formaction="<?php echo base_url();?>keluser/save_edit?id=<?php echo $id; ?>" class="btn btn-primary">Update
+                                    </div>
+                            </div>
+
                         </form>
-                           
-                        </table>
-                        <?php
-                            //if(isset($message)){
-                             //   echo "<div class='message'>";
-                             //   foreach ($message as $err){
-                             //       echo $err;
-                             //   }
-                                
-                             //   echo "</div>";
-                            //}
-                        ?>
-                  
-                     </div><!-- ./col -->
                 </div>
                 </div>
                 <!-- /.row -->

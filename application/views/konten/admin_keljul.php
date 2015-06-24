@@ -90,8 +90,8 @@
                                                  <td><img alt="Thumbnail image" src="<?php echo base_url();?>uploads/bukti/<?php echo $data->scan_struk?>" class="img-thumbnail" width="150" height="200"></td>
                                                
                                                 <td>
-                                                      <a href="<?php echo base_url();?>adminadmin/delete_bukti?id=<?php echo $data->id_invoice; ?>" >Delete</a>
-                                                        <a href="<?php echo base_url();?>adminadmin/accept_bukti?id=<?php echo $data->id_invoice; ?>" class="btn btn-primary" >Accept</a>
+                                                      <a href="<?php echo base_url();?>adminadmin/delete_bukti?id=<?php echo $data->id_invoice; ?>" class="btn btn-danger">Delete</a>
+                                                        <a href="<?php echo base_url();?>adminadmin/accept_bukti?id=<?php echo $data->id_invoice; ?>" class="btn btn-primary" <?php if ($data->status == "paid" or $data->status == "batal"){echo "style='pointer-events: none; opacity: 0.5;'";}else{}?>>Accept</a>
                                                 </td>
 
                                             </tr>

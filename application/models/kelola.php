@@ -271,7 +271,7 @@
     {
     	$query = "SELECT invoices.id , invoices.date, invoices.status,invoices.bukti, orders.options, orders.qty, orders.product_name, orders.product_id, orders.price, orders.pengiriman, orders.total_harga, user.email, user.nama, user.alamat, user.kota, user.kecamatan, user.kelurahan , user.provinsi, barang1.harga
 				FROM invoices, orders, user, barang1
-				WHERE invoices.id = $invoice and invoices.id = orders.invoice_id and invoices.user_id = user.id and barang1.id = orders.product_id";
+				WHERE invoices.id = $invoice and invoices.id = orders.invoice_id "; //and invoices.user_id = user.id and barang1.id = orders.product_id
         $hasil = $this->db->query($query);
         return $hasil -> result();
     }
@@ -299,8 +299,12 @@
     }
 
     public function get_pembayaran1(){
-    	 $query = "SELECT *   
+    	$query = "SELECT konfirm_pembayaran.*, invoices.status  
+				FROM konfirm_pembayaran, invoices
+				WHERE konfirm_pembayaran.id_invoice = invoices.id";
+    	/* $query = "SELECT *   
 				FROM konfirm_pembayaran";
+        */
         //Get all invoices from Invoices table
         $hasil = $this->db->query($query);
         if($hasil->num_rows() > 0){
@@ -378,7 +382,7 @@
         );
         //update status
     		if ($get['status']=='batal'){
-    		$query1 = "UPDATE barang1, invoices set barang1.$data[options] = (barang1.$data[options] + $data[qty]), invoices.status='$get[status]' where barang1.id = $data[id]";
+    		$query1 = "UPDATE barang1, invoices set barang1.$data[options] = (barang1.$data[options] + $data[qty]), invoices.status='$get[status]' WHERE invoices.id=$get[id]"; //where barang1.id = $data[id]";
     		$hasil = $this->db->query($query1);
     		if($hasil){
             	return true;
