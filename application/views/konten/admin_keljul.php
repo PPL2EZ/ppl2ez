@@ -37,8 +37,8 @@
                                                 <td><?php echo $data->qty; ?></td>-->
                                                 <td><?php echo $data->status; ?></td>
                                                 <td>
-                                                      <a href="<?php echo base_url();?>adminadmin/delete_invoice_admin?id=<?php echo $data->id; ?>" class="btn btn-danger">Delete</a>
-                                                        <a href="<?php echo base_url();?>adminadmin/konfirmasi_invoice?id=<?php echo $data->id; ?>" class="btn btn-success">Edit</a>
+                                                      <a href="<?php echo base_url();?>adminadmin/delete_invoice_admin?id=<?php echo $data->id; ?>" class="btn btn-danger" >Delete</a>
+                                                        <a href="<?php echo base_url();?>adminadmin/konfirmasi_invoice?id=<?php echo $data->id; ?>" class="btn btn-success" <?php if ($data->status == "batal"){echo "style='pointer-events: none; opacity: 0.5;'";}else{}?>>Edit</a>
                                                 </td>
 
                                             </tr>
@@ -90,8 +90,8 @@
                                                  <td><img alt="Thumbnail image" src="<?php echo base_url();?>uploads/bukti/<?php echo $data->scan_struk?>" class="img-thumbnail" width="150" height="200"></td>
                                                
                                                 <td>
-                                                      <a href="<?php echo base_url();?>adminadmin/delete_bukti?id=<?php echo $data->id_invoice; ?>" class="btn btn-danger" onclick="this.disabled = 'disabled';">Delete</a>
-                                                        <a href="<?php echo base_url();?>adminadmin/accept_bukti?id=<?php echo $data->id_invoice; ?>" class="btn btn-primary" onclick="this.disabled = 'disabled';">Accept</a>
+                                                      <a href="<?php echo base_url();?>adminadmin/delete_bukti?id=<?php echo $data->id_invoice; ?>" >Delete</a>
+                                                        <a href="<?php echo base_url();?>adminadmin/accept_bukti?id=<?php echo $data->id_invoice; ?>" class="btn btn-primary" >Accept</a>
                                                 </td>
 
                                             </tr>
@@ -113,6 +113,8 @@
 			</div>
 
             <script>
+            
+            //Datatables
             $(document).ready(function(){
                 $('#myTable').DataTable();
             });
@@ -122,5 +124,6 @@
             $(document).ready(function(){
                 $('#myTable1').DataTable();
             });
+
             </script>
             <!-- /.container-fluid -->

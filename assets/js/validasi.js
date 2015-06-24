@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
 	//Menyembunyikan glype icon
 	$("#gagal").hide();  
 	$("#sukses").hide();    
@@ -136,5 +137,17 @@ $(document).ready(function(){
         }
       });                        
     });
+
+
+   /*$("#kategori").click(function(){
+      var e = document.getElementById("kategori");
+      var struser = e.options[e.selectedIndex].value;
+     
+      if (struser == "batal"){
+            $("#submitstatus").hide();     
+      }else{
+
+      }                     
+    });*/
 
 });

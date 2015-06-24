@@ -240,7 +240,7 @@ function my_account(){
         );
      $data['barang'] = $this->kelola->edit_barang($get);
      // $data['katbar'] = $this->kelola->get_kat_bar();
-     $data['query'] = $this->kelola->get_kategori();
+      $data['query'] = $this->kelola->get_kategori();
 
         //$data['username'] = $session_data['username'];
       $this->load->view('layout/wrapper', $data);    
@@ -364,7 +364,7 @@ function my_account(){
   $data = array(         
           'pengiriman' => $this->input->post('bp'),
           'total_harga' => $this->input->post('t'),
-          'status' => $this->input->post('kategori')
+          //'status' => $this->input->post('kategori')
         );
   $data['id']=$_GET['id'];
   $result=$this->kelola->set_status_penjualan($data);
@@ -376,7 +376,28 @@ function my_account(){
 
       }
 
-      redirect('adminadmin/kelola_penjualan', 'refresh');
+     // redirect('adminadmin/kelola_penjualan', 'refresh');
+    redirect('adminadmin/konfirmasi_invoice?id='.$get, 'refresh');
+ }
+
+ public function set_status_penjualan1(){
+  $get=$_GET['id'];
+
+  $data = array(         
+          'status' => $this->input->post('kategori')
+        );
+  $data['id']=$_GET['id'];
+  $result=$this->kelola->set_status_penjualan1($data);
+
+  if ($result == FALSE){
+        echo "<script type='text/javascript'>alert('Perubahan Gagal !')</script>";
+      } else {
+        echo "<script type='text/javascript'>alert('Perubahan Berhasil !')</script>";
+
+      }
+
+     // redirect('adminadmin/kelola_penjualan', 'refresh');
+    redirect('adminadmin/konfirmasi_invoice?id='.$get, 'refresh');
  }
 
 
