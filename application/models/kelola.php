@@ -85,7 +85,27 @@
         //Get all invoices from Invoices table
         $hasil = $this->db->query($query);
 
-        	 return $hasil->result();
+        return $hasil->result();
+
+
+  
+		/**$condition = "id =". "'" . $get . "'";
+		$this->db->select('*');
+		$this->db->from('barang1');
+		$this->db->where($condition);
+		$query = $this->db->get();
+		return $query -> result();
+		**/
+	}
+
+	function edit_barang2($get){
+		$query = "SELECT barang1.$get[ukuran]
+				FROM barang1
+				WHERE id=$get[id]";
+        //Get all invoices from Invoices table
+        $hasil = $this->db->query($query);
+
+        return $hasil->result();
 
 
   

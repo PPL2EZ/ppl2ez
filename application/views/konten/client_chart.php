@@ -13,7 +13,9 @@ foreach($barang as $barang)
         $gambar=$barang->gambar;
         $deskripsi=$barang->deskripsi;
     }
+
 ?>
+
 <div class="center_content">
   <h4><b><?php echo $title?><br></b></h4>
   <form name="login" action="<?php echo base_url();?>home/add_to_cart?id=<?php echo $id;?>" method="post" role="form" class="form-signin">
@@ -51,6 +53,46 @@ foreach($barang as $barang)
       </td>
     </tr>
   </table>
+
 </form>
+<input type="text" id="id" name="id" value="<?php echo $id;?>">
+<p id="i"></p>
     
 </div>
+
+<script>
+
+     //Cek stok tersedia tidak
+   $("#quantity").change(function(){
+      //mendapatkan value dari quantity
+      var ukur     = $("#ukuran").val();
+      var quant     = $("#quantity").val();
+      var id     = $("#id").val();
+
+      // data string menyimpan ukuran m l xl
+      var dataString = 'ukuran='+ ukur
+
+      //var element = $(this);
+      //var clas = element.attr("id");
+
+       //alert('Password Didnt Match'+quant);
+     
+      $.ajax({
+        url:"http://localhost/ppl2ez/ajax/get2?id="+id,              
+        dataType : "json",
+        data: dataString,
+        type: "POST",
+
+        success: function(data){
+          if (data == "m"){
+            //document.getElementById("i").innerHTML     = data.l; 
+            alert('sukses');
+          }else{
+            alert('gaga');
+          }
+          
+    
+        }
+      });                       
+    }); 
+</script>
