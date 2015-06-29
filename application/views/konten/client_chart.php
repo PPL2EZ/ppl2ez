@@ -74,7 +74,7 @@ foreach($barang as $barang)
   
   <!-- Div Start Sepatu-->
   <div id="sepatu">
-    <form name="login" action="<?php echo base_url();?>home/add_to_cart?id=<?php echo $id;?>" method="post" role="form" class="form-signin">
+    <form name="login" action="<?php echo base_url();?>home/add_to_cart_s?id=<?php echo $id;?>" method="post" role="form" class="form-signin">
   <table style="width:80%">
     <tr>
       <th>Pesanan</th>
@@ -93,7 +93,7 @@ foreach($barang as $barang)
         
       </td>
       <td>
-           <input type="text" id="quantity" name="quantity" size="1" class="form-control" required>
+           <input type="text" id="quantity_s" name="quantity_s" size="1" class="form-control" required>
       </td>
     </tr>
     <tr>
@@ -122,7 +122,7 @@ foreach($barang as $barang)
     $("#baju").show();
     $("#sepatu").hide();
   }
-     //Cek stok tersedia tidak
+     //Cek stok baju tersedia tidak
    $("#quantity").change(function(){
       //mendapatkan value dari quantity
       //var ukur     = $("#ukuran").val();
@@ -143,6 +143,34 @@ foreach($barang as $barang)
         success: function(data){
           if (data < quant){
             alert('Ukuran '+ukur+' tidak mencukupi');
+          }else{
+          }
+          
+    
+        }
+      });                       
+    }); 
+
+     //Cek stok SEPATU tersedia tidak
+   $("#quantity_s").change(function(){
+      //mendapatkan value dari quantity
+      //var ukur     = $("#ukuran").val();
+      //var e = document.getElementById("ukuran");
+      //var ukur = e.options[e.selectedIndex].value;
+      var quant     = $("#quantity_s").val();
+      var id     = $("#id").val();
+
+      // data string menyimpan ukuran m l xl
+      //var dataString = 'ukuran='+ ukur
+
+      $.ajax({
+        url:"http://localhost/ppl2ez/ajax/cek_sepatu?id="+id,              
+        dataType : "json",
+        type: "POST",
+
+        success: function(data){
+          if (data < quant){
+            alert('Stok ukuran tidak mencukupi');
           }else{
           }
           

@@ -161,11 +161,34 @@ class Home extends CI_Controller {
 		$product = $this->kelola->get_barang_detail($get);
 		$data = array(
 					   'id'      => $product[0]->id,
+					   'kat'      => $product[0]->kategori,
 					   'qty'     => $qty,
 					   'price'   => $product[0]->harga * $qty,
 					   'name'    => $product[0]->nama_barang,
 					   'options' => array(
 					    	'Size' => $ukuran, 
+					    	'Color' => 'Red'
+					    )
+					);
+
+		$this->cart->insert($data);
+		//$this->cart->destroy();
+		redirect(base_url());
+	}
+
+	public function add_to_cart_s()
+	{
+		$get = $_GET['id'];
+		$qty = $this->input->post('quantity_s');
+		$product = $this->kelola->get_barang_detail($get);
+		$data = array(
+					   'id'      => $product[0]->id,
+					   'kat'     => $product[0]->kategori,
+					   'qty'     => $qty,
+					   'price'   => $product[0]->harga * $qty,
+					   'name'    => $product[0]->nama_barang,
+					   'options' => array(
+					    	'Size' => 3, 
 					    	'Color' => 'Red'
 					    )
 					);

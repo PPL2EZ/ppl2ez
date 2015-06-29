@@ -118,6 +118,18 @@
 		**/
 	}
 
+	function cek_sepatu($get){
+		$query = "SELECT stok
+				FROM barang1
+				WHERE id=$get[id]";
+        //Get all invoices from Invoices table
+        $hasil = $this->db->query($query);
+
+        return $hasil->result();
+
+
+	}
+
 
 	function cari_kategori($get){
 		$condition = "kategori =". "'" . $get . "'";
@@ -240,6 +252,11 @@
 				'options'				=> $item['options']['Size']
 			); 
 			
+			//menyimpan apa kategori barang
+			$dataa = array(
+				'kategori'			=> $item['kat']
+				);
+
 
 			$this->db->insert('orders', $data);
 
@@ -248,12 +265,15 @@
 				'out' => $data['qty'],
 				'in' => 0
 			);
-			//$update = "UPDATE stok SET stok.out=$stok[out], stok.masuk=$stok[in]";
-			//$this->db->query($update);
-
-			$query = "UPDATE barang1 set barang1.$data[options] = (barang1.$data[options] - $data[qty]) where barang1.id = $data[product_id]";
-			$this->db->query($query);
-
+			
+			//melakukan query yang berpedoman pada jenis kategori
+			if ($dataa['kategori'] == 3){
+				$query = "UPDATE barang1 set barang1.stok = (barang1.stok - $data[qty]) where barang1.id = $data[product_id]";
+				$this->db->query($query);
+			}else{
+				$query = "UPDATE barang1 set barang1.$data[options] = (barang1.$data[options] - $data[qty]) where barang1.id = $data[product_id]";
+				$this->db->query($query);
+			}
 		}
 		
 		return true;
@@ -398,11 +418,11 @@
     	$data = array(
     		'id' => $result[0]->product_id,
           	'options' =>$result[0]->options,
-          	'qty' =>$result[0]->qty
+          	'qty' =>$result[0]->qty,
         );
         //update status
     		if ($get['status']=='batal'){
-    		$query1 = "UPDATE barang1, invoices set barang1.$data[options] = (barang1.$data[options] + $data[qty]), invoices.status='$get[status]' WHERE invoices.id=$get[id]"; //where barang1.id = $data[id]";
+    		$query1 = "UPDATE barang1, invoices, orders set barang1.$data[options] = (barang1.$data[options] + $data[qty]), invoices.status='$get[status]' WHERE invoices.id=$get[id] and invoices.id=orders.invoice_id and orders.product_id=barang1.id"; //where barang1.id = $data[id]";
     		$hasil = $this->db->query($query1);
     		if($hasil){
             	return true;
@@ -419,6 +439,8 @@
 	            return false;       
 	   	 	}
     	}
+
+    	
         /*
     	if ($get['status']=='batal'){
     		$query1 = "UPDATE barang1, invoices set barang1.$data[options] = (barang1.$data[options] + $data[qty]), invoices.status='$get[status]' where barang1.id = $data[id]";

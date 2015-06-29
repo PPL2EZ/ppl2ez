@@ -14,9 +14,9 @@ class Order extends CI_Controller {
 	
 	public function index()
 	{
-		 $session_data = $this->session->userdata('client');
+		$session_data = $this->session->userdata('client');
     	$result = $this->login_auth->read_user_information1($session_data);
-		 $data = $result[0]->id;
+		$data = $result[0]->id;
          
 		$is_processed = $this->kelola->order($data);
 		if($is_processed == true){

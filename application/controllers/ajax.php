@@ -41,13 +41,22 @@ class Ajax extends CI_Controller {
         echo json_encode($array);
 	}
 
-	//controller untuk mengecek stok barang sewaktu pembelian
+	//controller untuk mengecek stok barang baju sewaktu pembelian
 	public function get2(){
 		
 		$get['id'] = $_GET['id'];
 		$get['ukuran'] = $_POST['ukuran'];
 		$result = $this->kelola->edit_barang2($get);
 		$array = $result[0]->$get['ukuran'];
+        echo json_encode($array);
+	}
+
+	//controller untuk mengecek stok barang sepatu sewaktu pembelian
+	public function cek_sepatu(){
+		
+		$get['id'] = $_GET['id'];
+		$result = $this->kelola->cek_sepatu($get);
+		$array = $result[0]->stok;
         echo json_encode($array);
 	}
 
