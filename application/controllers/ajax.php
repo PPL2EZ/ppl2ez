@@ -47,7 +47,7 @@ class Ajax extends CI_Controller {
 		$get['id'] = $_GET['id'];
 		$get['ukuran'] = $_POST['ukuran'];
 		$result = $this->kelola->edit_barang2($get);
-		$array = $result[0];
+		$array = $result[0]->$get['ukuran'];
         echo json_encode($array);
 	}
 
