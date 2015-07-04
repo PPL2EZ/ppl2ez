@@ -59,10 +59,7 @@
  
                                     </table>
                             <input type="submit" value="Simpan" class="btn btn-primary" >
-                        </form>  
-                             
-                       
-                    
+                        </form>                    
                      </div><!-- ./col -->
                 </div>
 
