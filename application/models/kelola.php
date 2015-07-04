@@ -309,9 +309,9 @@
 
     public function get_invoice_by_id($invoice)
     {
-    	$query = "SELECT invoices.id , invoices.date, invoices.status,invoices.bukti, orders.options, orders.qty, orders.product_name, orders.product_id, orders.price, orders.pengiriman, orders.total_harga, user.email, user.nama, user.alamat, user.kota, user.kecamatan, user.kelurahan , user.provinsi, barang1.harga
+    	$query = "SELECT invoices.id , invoices.date, invoices.status,invoices.bukti, orders.options, orders.qty, orders.product_name, orders.product_id, orders.price, orders.pengiriman, orders.total_harga, user.email, user.nama, user.alamat, user.kota, user.kecamatan, user.kelurahan , user.provinsi, barang1.harga, barang1.kategori
 				FROM invoices, orders, user, barang1
-				WHERE invoices.id = $invoice and invoices.id = orders.invoice_id "; //and invoices.user_id = user.id and barang1.id = orders.product_id
+				WHERE invoices.id = $invoice and invoices.id = orders.invoice_id and orders.product_id = barang1.id"; //and invoices.user_id = user.id and barang1.id = orders.product_id
         $hasil = $this->db->query($query);
         return $hasil -> result();
     }
@@ -419,26 +419,33 @@
     		'id' => $result[0]->product_id,
           	'options' =>$result[0]->options,
           	'qty' =>$result[0]->qty,
+          	'kat' => $result[0]->kategori
         );
         //update status
-    		if ($get['status']=='batal'){
-    		$query1 = "UPDATE barang1, invoices, orders set barang1.$data[options] = (barang1.$data[options] + $data[qty]), invoices.status='$get[status]' WHERE invoices.id=$get[id] and invoices.id=orders.invoice_id and orders.product_id=barang1.id"; //where barang1.id = $data[id]";
-    		$hasil = $this->db->query($query1);
-    		if($hasil){
-            	return true;
-        	} else {
-	            return false;       
-	   	 	}
-    	}else{
-    		//update status
-    		$query = "UPDATE invoices, orders SET invoices.status='$get[status]' WHERE invoices.id=$get[id] AND invoices.id=orders.invoice_id";
-    		$hasil = $this->db->query($query);
-    		if($hasil){
-            	return true;
-        	} else {
-	            return false;       
-	   	 	}
-    	}
+    		if ($get['status'] == 'batal'){
+    			if ($data['kat'] == 3){
+    				$query1 = "UPDATE barang1, invoices, orders set barang1.stok = (barang1.stok + $data[qty]), invoices.status='$get[status]' WHERE invoices.id=$get[id] and invoices.id=orders.invoice_id and orders.product_id=barang1.id"; //where barang1.id = $data[id]";
+		    		$hasil = $this->db->query($query1);
+    			}else{
+		    		$query1 = "UPDATE barang1, invoices, orders set barang1.$data[options] = (barang1.$data[options] + $data[qty]), invoices.status='$get[status]' WHERE invoices.id=$get[id] and invoices.id=orders.invoice_id and orders.product_id=barang1.id"; //where barang1.id = $data[id]";
+		    		$hasil = $this->db->query($query1);
+	   	 		}
+	   	 		if($hasil){
+	            	return true;
+	        	} else {
+		            return false;       
+		   	 	}
+	   	 		
+	    	}else{
+	    		//update status
+	    		$query = "UPDATE invoices, orders SET invoices.status='$get[status]' WHERE invoices.id=$get[id] AND invoices.id=orders.invoice_id";
+	    		$hasil = $this->db->query($query);
+	    		if($hasil){
+	            	return true;
+	        	} else {
+		            return false;       
+		   	 	}
+	    	}
 
     	
         /*
