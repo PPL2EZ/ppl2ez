@@ -93,7 +93,7 @@ foreach($barang as $barang)
         
       </td>
       <td>
-           <input type="text" id="quantity_s" name="quantity_s" size="1" class="form-control" required>
+           <input type="text" id="quantitys" name="quantitys" class="form-control" required>
       </td>
     </tr>
     <tr>
@@ -152,12 +152,12 @@ foreach($barang as $barang)
     }); 
 
      //Cek stok SEPATU tersedia tidak
-   $("#quantity_s").change(function(){
+   $("#quantitys").change(function(){
       //mendapatkan value dari quantity
       //var ukur     = $("#ukuran").val();
       //var e = document.getElementById("ukuran");
       //var ukur = e.options[e.selectedIndex].value;
-      var quant     = $("#quantity_s").val();
+      var quant     = $("#quantitys").val();
       var id     = $("#id").val();
 
       // data string menyimpan ukuran m l xl
@@ -168,8 +168,8 @@ foreach($barang as $barang)
         dataType : "json",
         type: "POST",
 
-        success: function(data){
-          if (data < quant){
+        success: function(dataa){
+          if (quant > dataa){
             alert('Stok ukuran tidak mencukupi');
           }else{
           }
