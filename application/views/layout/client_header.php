@@ -87,7 +87,18 @@
         <li class="divider"></li>
         <?php
           if ($login == false){ ?>
-            <li><a href="<?php echo base_url();?>user_auth/logout_client" class="nav1">logout</a></li>
+            <!--<li><a href="<?php echo base_url();?>user_auth/logout_client" class="nav1">logout</a></li>-->
+             <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account
+                      <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="<?php echo base_url();?>client">Details</a></li>
+                          <li><a href="<?php echo base_url();?>user_auth/logout_client">Logout</a></li>
+                        </ul>
+                
+              </li>
+            </ul>
         <?php
           }
           
